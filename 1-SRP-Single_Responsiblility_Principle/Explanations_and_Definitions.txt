@@ -1,6 +1,0 @@
-Definitions:
-
-* A class should have:
-    only one responsiblility,
-    and only one reason to change.
-

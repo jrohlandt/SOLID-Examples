@@ -1,0 +1,120 @@
+
+_________________________________
+    S O L I D
+    Design Principles
+_________________________________
+
+What is SOLID all about?
+1. The decoupling of code
+
+Why SOLID?
+1. Allows for decoupling of code
+2. Prevent code rot
+3. Avoid Breakage
+4. Avoid ripple effect
+5. Testability
+6. Maintainability
+-----------------------------------
+The Single Responsibility Principle
+-----------------------------------
+* Definition:
+    A class should have:
+    only one responsiblility,
+    and only one reason to change.
+
+------------------------
+The Open/Closed Principle
+------------------------
+* Definition:
+    Entities should be open for extension,
+    but closed for modification.
+
+* Open/Closed is a goal,
+  it is very hard to implement perfectly,
+  but it is something we always strive for.
+
+  - Entities e.g. class, method or function
+
+* Open:
+    It should be simple to change the behavior of a class.....
+* Closed
+    But without modifying the original source code of that class.
+
+* Seperate extensible behavior
+  behind and interface,
+  and flip the dependencies.
+
+---------------------------------
+The Liskov Substitution Principle
+---------------------------------
+* Definition:
+    Derived classes must be substitutable for their base classes.
+
+*   Every time you prepare a sub-class,
+    that sub-class should be substitutable
+    in every place
+    where the original class was accepted.
+
+*   Every implementation of an Abstraction or an Interface
+    should be substitutable anywhere, that the abstraction is accepted.
+
+*   Ways to adhere to the Liskov Substitution Principle
+    - 1. Signature must match
+    - 2. Preconditions can't be greater
+    - 3. Post conditions at least equal to
+    - 4. Exception types must match
+
+
+-----------------------------------
+The Interface Segregation Principle
+-----------------------------------
+* Definition:
+    A client should not be
+    forced to implement an
+    interface that is does not use.
+
+---------------------------------
+The Dependecy Inversion Principle
+---------------------------------
+* Definition:
+    Depend on abstractions,
+    not on concretions.
+
+* High level modules should not
+  depend upon low level modules.
+  They should depend on abstractions.
+  The low level modules too,
+  should depend on abstractions.
+
+  - High level code isn't concerned
+    with specific details.
+
+  - Low level code is more concerned
+    with details and specifics.
+
+* Benefits:
+    - Allows us to decouple our code.
+
+
+
+------------------
+    MORE
+------------------
+
+* Code to an Interface
+
+Knowledge:
+    Does the class need to know something?
+        - e.g. how a user is Authenticated ( Auth::check() )
+
+
+* Consider if a class is dependent on anything that could change or break the class if that dependecy changes.
+
+* If a class has multiple consumers or reasons to change, then it becomes a good idea to to extract them
+  into their own dedicated classes.
+
+* If you find yourself doing type checking e.g. if (Animal instanceof Goat) or if (is_array($values)) ,
+  then you are most likely breaking one of these principles
+  - instanceof: most likely breaking Open/Closed as well as the Liskov Substitution Principle
+
+* If you are breaking one principle you are likely breaking the others as well.
