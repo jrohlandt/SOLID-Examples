@@ -22,6 +22,9 @@ The Single Responsibility Principle
     only one responsiblility,
     and only one reason to change.
 
+* A Responsiblility is  a family of functions that serves one particular actor.
+  When the needs of that actor change, it becomes a source of change for that family of functions
+
 ------------------------
 The Open/Closed Principle
 ------------------------
